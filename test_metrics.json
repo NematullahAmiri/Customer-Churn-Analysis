@@ -1,0 +1,26 @@
+{
+  "model_name": "Random Forest",
+  "target": "Exited",
+  "threshold": 0.3574523809523809,
+  "feature_columns": [
+    "CreditScore",
+    "Geography",
+    "Gender",
+    "Age",
+    "Tenure",
+    "Balance",
+    "NumOfProducts",
+    "HasCrCard",
+    "IsActiveMember",
+    "EstimatedSalary"
+  ],
+  "metrics": {
+    "Threshold": 0.3574523809523809,
+    "Accuracy": 0.8435,
+    "Precision": 0.6211340206185567,
+    "Recall": 0.5921375921375921,
+    "F1": 0.6062893081761006,
+    "ROC_AUC": 0.849935451630367,
+    "Average_Precision": 0.6764395889356796
+  }
+}
