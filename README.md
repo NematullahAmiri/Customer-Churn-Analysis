@@ -1,111 +1,133 @@
-# Customer Churn Analysis & Prediction
+# Customer Churn Prediction & Analysis
 
-An end-to-end machine learning project exploring customer churn patterns and developing a predictive model to help businesses identify customers who may be at risk of leaving.
+**An end-to-end data science project for understanding customer churn and identifying customers who may be at risk of leaving.**
+
+This project applies exploratory data analysis and machine learning to customer data to investigate churn patterns, evaluate predictive performance, and support data-informed customer retention strategies.
 
 ## Project Overview
 
-Customer churn can affect customer retention, revenue stability, and long-term business growth. This project uses Python and machine learning to analyze customer characteristics, compare classification models, and evaluate their ability to identify customers who exited.
+Customer churn can reduce recurring revenue and increase customer acquisition costs. Understanding which customers are more likely to leave can help businesses investigate retention risks and prioritize appropriate follow-up actions.
 
-The project demonstrates an applied workflow connecting data analysis, predictive modeling, model evaluation, and potential business use.
+The objective of this project is to analyze customer characteristics, develop a churn classification model, and communicate its results in a business-oriented format.
 
-## Business Questions
+## Business Problem
 
-- What proportion of customers exited?
-- Which customer characteristics are associated with churn?
-- How well can machine learning distinguish customers who exited from those who stayed?
-- How could churn-risk predictions support further investigation and customer-retention planning?
+How can customer data be used to identify patterns associated with churn and support better customer retention decisions?
+
+The analysis focuses on three questions:
+
+- What patterns distinguish customers who leave from those who remain?
+- How effectively can a machine learning model identify potential churners?
+- How can predictive results inform customer retention strategies?
+
+## Project Highlights
+
+- Exploratory data analysis and visualization
+- Data cleaning and preprocessing
+- Customer churn classification using machine learning
+- Model evaluation using multiple performance metrics
+- Model interpretation and business-focused insights
+- Interactive prediction demonstration using Streamlit, if included in the current repository
 
 ## Dataset
 
-The dataset contains 10,000 customer records and 14 original columns.
+The project analyzes a dataset containing approximately 10,000 customer records.
 
-- **Target variable:** `Exited`
-- `Exited = 1`: customer exited
-- `Exited = 0`: customer stayed
-- **Customers who exited:** 2,037
-- **Observed churn rate:** 20.37%
+| Property | Description |
+|---|---|
+| Observation unit | Customer |
+| Prediction task | Binary classification |
+| Target | Customer churn |
+| Input data | Customer attributes and related features |
+| Dataset source | Add the verified original source and link |
 
-The modeling workflow excludes the target from the predictors and removes `RowNumber`, `CustomerId`, and `Surname` from the input features.
-
-The dataset's source, usage terms, and redistribution permissions should be verified before the raw data is published or redistributed.
+Confirm the dataset size, target column name, and source against the actual notebook before publishing.
 
 ## Methodology
 
-The project follows these stages:
+1. **Business understanding:** Define the churn problem and its business relevance.
+2. **Data understanding:** Examine the dataset, variable distributions, and churn patterns.
+3. **Data preparation:** Handle missing values, encode categorical features, and prepare model inputs.
+4. **Exploratory analysis:** Investigate relationships between customer characteristics and churn.
+5. **Model development:** Train and compare suitable classification models.
+6. **Model evaluation:** Assess predictive performance using appropriate metrics.
+7. **Interpretation:** Translate supported findings into potential retention actions.
+8. **Demonstration:** Provide an interactive application if the Streamlit implementation is available.
 
-1. Business understanding and problem definition
-2. Dataset inspection and data-quality checks
-3. Exploratory data analysis and visualization
-4. Feature and target separation
-5. Stratified training, validation, and test splits
-6. Numeric and categorical preprocessing
-7. Model training and comparison
-8. Validation-based decision-threshold selection
-9. Final evaluation on held-out test data
-10. Model and evaluation-metric export
+## Model Performance
 
-The notebook compares Logistic Regression and Random Forest using metrics such as precision, recall, F1-score, ROC-AUC, and average precision.
+The project has previously reported approximately 86% accuracy for an XGBoost-based model, with precision of approximately 0.73 and recall of approximately 0.50.
 
-## Model Evaluation
+These figures must be verified against the final evaluation output before publication.
 
-Final test results are recorded in `test_metrics.json`. Consult that file for the actual results produced by the completed notebook.
+Accuracy alone is not sufficient for a churn problem. Recall is particularly important because customers who churn but are missed by the model may represent lost retention opportunities.
 
-Accuracy alone is not sufficient for a churn model. Precision and recall for the churn class are important because false alarms and missed at-risk customers can have different business consequences.
+Include the evaluation split, confusion matrix, F1-score, and ROC-AUC when available. Compare models using the same evaluation methodology.
 
-The final test set is kept separate from model training and validation to provide a more credible estimate of generalization performance.
+## Business Implications
+
+Model predictions can help a business identify customers for further investigation and design targeted retention experiments.
+
+Potential actions include:
+
+- Investigating churn patterns across customer segments.
+- Reviewing service and customer experience issues.
+- Testing targeted retention offers.
+- Monitoring churn rates and retention outcomes over time.
+
+These are potential applications, not conclusions that should be claimed without supporting analysis.
+
+## Responsible Use and Limitations
+
+- Predictions indicate estimated risk, not certainty.
+- Associations between features and churn do not establish causation.
+- Model performance may change across customer populations and over time.
+- Customer data should be handled with appropriate privacy safeguards.
+- Retention actions should be evaluated for effectiveness and unintended consequences.
+
+## Technology Stack
+
+List only the tools actually used in the project. Potential technologies include:
+
+- Python
+- Pandas and NumPy
+- Matplotlib and Seaborn
+- Scikit-learn
+- XGBoost
+- Jupyter Notebook
+- Streamlit
 
 ## Repository Contents
 
-- `Customer_Churn_Analysis.ipynb` — analysis, preprocessing, model training, and evaluation
-- `churn_model.joblib` — serialized model pipeline
-- `test_metrics.json` — exported evaluation results
-- `requirements.txt` — Python dependencies
-- `images/` — project visualizations and dashboard screenshots, added as available
-- `app.py` — interactive application, once implemented and verified
+Update this section to reflect the actual files and folders in the repository.
+
+- Jupyter Notebook — analysis, model development, and evaluation
+- Application code — interactive demonstration, if included
+- Images — selected charts and model evaluation visuals
+- `requirements.txt` — dependencies, if provided
 
 ## Getting Started
 
-### Requirements
+1. Clone the repository:
 
-- Python 3.10 or another Python version compatible with the installed dependencies
-- pip
-- Jupyter Notebook or Google Colab
+   `git clone https://github.com/NematullahAmiri/Customer-Churn-Analysis.git`
 
-### Install dependencies
+2. Enter the project directory:
 
-```bash
-pip install -r requirements.txt
-```
+   `cd Customer-Churn-Analysis`
 
-### Run the notebook
+3. Create and activate a Python virtual environment.
 
-1. Open `Customer_Churn_Analysis.ipynb` in Google Colab or Jupyter.
-2. Upload `Churn_Modelling.csv` to the notebook environment.
-3. Confirm that the notebook's data-loading path matches the uploaded file.
-4. Run the notebook cells in order.
+4. Install dependencies using `requirements.txt`, if available:
 
-The dataset is not included by default. Obtain it from a source whose access and usage terms you have verified.
+   `pip install -r requirements.txt`
 
-## Limitations and Responsible Use
-
-- This dataset represents a particular collection of customers; performance may differ in other businesses or populations.
-- Associations in the data do not establish that a customer characteristic causes churn.
-- A churn probability is a model estimate, not a guarantee that a customer will leave.
-- Predictive performance does not demonstrate that a particular retention offer will prevent churn.
-- Business deployment would require additional validation, monitoring, privacy safeguards, and evaluation on relevant operational data.
-
-## Future Improvements
-
-- Build an interactive Streamlit application for individual and batch predictions.
-- Improve model interpretability and document the most influential predictors.
-- Monitor model performance on new data.
-- Test retention interventions experimentally before claiming business impact.
+5. Follow the notebook instructions or run the application using the verified command documented in the repository.
 
 ## Author
 
 **Nematullah Amiri**
 
-Data Science | Business Intelligence | Project Analytics | Public Financial Management
-
-- Portfolio: https://nematullahamiri.github.io/
 - GitHub: https://github.com/NematullahAmiri
+- Portfolio: https://nematullahamiri.github.io/
+
