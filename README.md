@@ -124,6 +124,43 @@ Update this section to reflect the actual files and folders in the repository.
 
 5. Follow the notebook instructions or run the application using the verified command documented in the repository.
 
+
+## Exploratory Data Analysis
+
+### 1. Customer Churn Distribution
+
+This chart shows the distribution of customers who churned and those who remained, helping readers understand the target-class balance.
+
+![Customer churn distribution](images/churn_distribution.png)
+
+### 2. Churn by Contract Type
+
+This chart compares churn across contract categories, if contract type is available in the dataset.
+
+![Churn by contract type](images/churn_by_contract.png)
+
+### 3. Model Evaluation
+
+The confusion matrix shows correct and incorrect predictions for each class, helping assess how effectively the model identifies customers who churn.
+
+![Confusion matrix](images/confusion_matrix.png)
+
+### 4. Feature Importance
+
+This visualization presents the features the trained model identifies as important for prediction, using the method actually applied in the notebook.
+
+![Feature importance](images/feature_importance.png)
+
+### 5. ROC Curve
+
+The ROC curve illustrates the trade-off between the true-positive rate and false-positive rate across classification thresholds.
+
+![ROC curve](images/roc_curve.png)
+
+
+
+
+
 ## Author
 
 **Nematullah Amiri**
